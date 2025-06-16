@@ -1,0 +1,14 @@
+// File SCSS Utama
+
+// 1. Variabel dan dasar
+@import 'partials/base';
+
+// 2. Partial untuk bagian spesifik
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/home';
+@import 'partials/flights';
+@import 'pages';
+
+// 3. (Nantinya) Komponen
+// @import 'components/buttons';

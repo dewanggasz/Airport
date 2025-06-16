@@ -1,0 +1,121 @@
+//=========================================
+// Styling untuk Homepage v2 ("Stunning")
+//=========================================
+$section-padding: 6rem;
+
+.section-heading { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.2; color: $text-color; margin-bottom: 1rem; letter-spacing: -0.03em; }
+.cta-link { font-weight: 700; color: $primary-color; text-decoration: none; display: inline-block; transition: transform 0.2s; &:hover { transform: translateX(5px); } }
+.homepage {display: flex; flex-direction: column; align-items: center;}
+
+// 1. Hero Section v2
+.hero-v2 {
+    height: 800px; min-height: 700px;  width: 1440px; position: relative; color: $white; display: flex; align-items: flex-end; padding-bottom: 8rem; margin-top: 5rem;
+    .hero-v2-background { position: absolute; inset: 0; background-color: #111; overflow: hidden;
+        .hero-v2-bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transform: scale(1.1); }
+    }
+    .hero-v2-content { position: relative; z-index: 2; width: 100%; text-align: center; 
+        .hero-container {display: flex; flex-direction: column; align-items: center;}
+    }
+    .hero-main-title { font-size: clamp(3rem, 10vw, 5rem); font-weight: 800; letter-spacing: -0.05em; line-height: 1.16;
+        .line { display: block; overflow: hidden; }
+        .line span { display: block; transform: translateY(110%); }
+    }
+    .hero-sub-title { font-size: 1.25rem; margin-top: 1.5rem; max-width: 500px; opacity: 0; transform: translateY(20px); }
+    .hero-flight-finder { margin-top: 3rem; width: 600px; max-width: 600px; opacity: 0; transform: translateY(20px); display: inline-block; }
+    .hero-scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); width: 2rem; height: 3rem; svg { width: 100%; height: 100%; animation: scroll-bounce 2s infinite; } }
+}
+@keyframes scroll-bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-10px); } }
+.finder-form-v2 {
+    display: flex; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px; padding: 0.5rem;
+    .icon-wrapper { display: flex; align-items: center; padding: 0 1rem; svg { width: 1.5rem; height: 1.5rem; color: rgba(255,255,255,0.7); } }
+    input { flex-grow: 1; background: transparent; border: none; color: $white; font-size: 1.1rem; padding: 0.75rem 0;
+        &::placeholder { color: rgba(255,255,255,0.5); }
+        &:focus { outline: none; }
+    }
+    button { background: $white; color: $primary-color; border: none; border-radius: 50px; padding: 0 2rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+        &:hover { background-color: darken($white, 10%); }
+    }
+}
+
+// 2. Live Flights Ticker
+.live-flights-section {
+    padding:0; background: $white;
+    .live-flights-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; @media(min-width: 768px){grid-template-columns: 1fr 1fr; padding: 2rem;}}
+    .flight-ticker { border: 1px solid #e5e7eb; border-radius: 0rem; padding: 2rem; background-color: $background-color;
+        h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; border-bottom: 1px solid $color-warning; padding-bottom: 1rem; }
+    }
+    .ticker-item { display: grid; grid-template-columns: 60px 1fr 100px 20px; align-items: center; gap: 1rem; padding: 0.75rem 0;
+        &:not(:last-child){ border-bottom: 1px solid #f3f4f6; }
+        .time { font-weight: 700; font-size: 1.1rem; }
+        .city { font-weight: 500; }
+        .flight-no { font-size: 0.9rem; color: $text-color-light; }
+    }
+    .status-dot { width: 10px; height: 10px; border-radius: 50%;
+        &.status-scheduled, &.status-on-time, &.status-landed, &.status-departed { background: $color-success; }
+        &.status-delayed { background: $color-warning; }
+        &.status-cancelled { background: $color-danger; }
+    }
+    .ticker-footer { text-align: end; margin-bottom: 4rem; padding-right: 2rem; a{background-color: $primary-color; padding: 1rem 2rem; color: $white;}}
+}
+
+// 3. Journey Guide
+.journey-guide-section {
+    padding: 0; width: 1440px;
+    .journey-steps { display: grid; width: 100% !important;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        'one one two'
+        'three four five';
+        .item1{grid-area: one; background-color: $primary-color; color: $white;} .item2{grid-area: two; background-color:$primary-color; color: $white;} .item3{grid-area: three; background-color:$primary-color; color: $white} .item4{grid-area: four; background-color: $primary-color; color: $white} .item5{grid-area: five; background-color: $primary-color; color: $white;}
+        .journey-step { padding: 7rem; cursor: pointer; position: relative; overflow: hidden;
+            img {position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 2; object-fit: cover;}
+            .step-content{z-index: 3; position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; justify-content: space-between; flex-direction: column; padding: 1rem;
+                .step-number{font-size: 1.5rem; font-weight: 700;}
+                h4 { font-size: 3rem; font-weight: 200;}
+            }
+        }
+        .journey-step:hover img {
+            transform: scale(1.05);
+            transition: .3s ease-in-out;
+            opacity: 80%;
+        }
+    }
+}
+
+// 4. Transport Hub
+.transport-hub-section {
+    padding:0; background-color: $white;
+    .transport-container {display: grid; grid-template-columns: 1fr;
+        .transport-options {display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;}
+        .one {border-left: 1px solid $primary-color; border-bottom: 1px solid $primary-color;} .two {border-left: 1px solid $primary-color; border-bottom: 1px solid $primary-color;} .three {border-left: 1px solid $primary-color; border-bottom: 1px solid $primary-color;} .four {border-left: 1px solid $primary-color; border-bottom: 1px solid $primary-color; border-right: 1px solid $primary-color ;}
+        .transport-option { display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; color: $text-color; font-weight: 600; padding: 2rem; text-align: center;
+            .transport-icon { width: 80px; height: 80px;
+                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;
+                color: $primary-color; transition: all 0.3s;
+                svg { width: 36px; height: 36px; }
+            }
+            &:hover .transport-icon { background-color: $primary-color; color: $white; transform: scale(1.1); box-shadow: 0 8px 16px rgba($primary-color, 0.2); }
+        }
+    }
+}
+
+
+// 5. News Section
+.news-section-home {
+    padding: $section-padding 0; background-color: $white;
+    .news-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .news-grid-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .view-all-news-mobile { display: none; text-align: center; margin-top: 2rem; @media(max-width: 767px){ display: block; } }
+    .mobile-hidden { @media(max-width: 767px){ display: none; } }
+}
+.news-card-v2 {
+    display: block; text-decoration: none;
+    .news-card-image { border-radius: 1rem; overflow: hidden; margin-bottom: 1rem;
+        img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.4s ease; }
+    }
+    .news-date { font-size: 0.8rem; font-weight: 600; color: $text-color-light; margin-bottom: 0.5rem; }
+    h4 { font-size: 1.25rem; font-weight: 700; color: $text-color; transition: color 0.2s; margin-bottom: 0.5rem; }
+    .news-excerpt { font-size: 0.9rem; color: $text-color-light; }
+    &:hover h4 { color: $primary-color; }
+    &:hover .news-card-image img { transform: scale(1.05); }
+}

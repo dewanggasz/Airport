@@ -1,0 +1,67 @@
+// Import Font (tetap sama)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+// ↓↓↓ VARIABEL WARNA BARU "HARMONI TIMOR" ↓↓↓
+$font-family-sans: 'Inter', sans-serif;
+
+// Warna Primer (Aksen)
+$primary-color: #c0392b; // Merah Perjuangan
+
+// Warna Latar Belakang & Netral
+$background-color: #f5f6fa; // Putih Gading / Awan
+$white: #ffffff;
+$gray: rgb(236, 236, 236);
+$dark-bg: #1e272e; // Hitam Obscuritas
+
+// Warna Teks
+$text-color: #485460; // Abu-abu Gelap
+$text-color-light: #808e9b; // Abu-abu Terang
+
+// Warna Aksen Lainnya (untuk status, dll)
+$color-success: #27ae60; // Hijau
+$color-warning: #f1c40f; // Kuning Emas
+$color-danger: #c0392b;  // Merah (sama dengan primer)
+$color-info: #2980b9;    // Biru (jika dibutuhkan)
+
+// ↑↑↑ AKHIR VARIABEL WARNA BARU ↑↑↑
+
+
+// Reset dan Style Dasar (tidak ada perubahan)
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-sans;
+  background-color: $background-color;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+
+/* resources/css/app.css - Versi untuk Tailwind v4 */
+
+/* Mengimpor file dasar dan utilitas Tailwind */
+
+
+
+/* CSS custom untuk header saat di-scroll */
+/* Di v4, kita bisa menulis CSS biasa seperti ini */
+#main-header.scrolled {
+  background-color: rgb(255 255 255 / 0.95);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#main-header.scrolled a {
+  color: #1f2937; /* text-gray-800 */
+}
+
+#main-header.scrolled a.text-blue-600 {
+  color: #2563eb; /* Pastikan link aktif tetap biru */
+}
